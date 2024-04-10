@@ -1,0 +1,67 @@
+[user]
+	email = 129603980+itislu@users.noreply.github.com
+	name = Lukas Dullinger
+
+[color]
+	ui = true
+
+[alias]
+	aa = add --all
+	br = branch
+	bl = blame
+	chp = cherry-pick
+	chpa = cherry-pick --abort
+	chpc = cherry-pick --continue
+	ci = commit -v
+	cia = commit -v --amend
+	cim = commit -m
+	cl = clone
+	cl1 = clone --depth 1
+	co = checkout
+	co- = checkout -
+	cob = checkout -b
+	df = diff
+	dfc = diff --cached
+	dfw = diff -w
+	dfcw = diff --cached -w
+	dfs = diff --stat --summary
+	fh = fetch
+	fhu = fetch upstream
+	mg = merge
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase -i
+	rbm = rebase master
+	rmt = remote
+	rmtv = remote -v
+	rmta = remote add
+	rmtau = remote add upstream
+	rs = reset
+	rss = reset --soft
+	rv = revert
+	pl = pull
+	plr = pull --rebase
+	ps = push
+	sh = stash
+	sm = submodule
+	st = status
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ai%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	lgp = log -p
+	lgpw = log -p -w
+	lgs = log --stat --summary
+	lgt = log --abbrev-commit --decorate --graph --color --pretty='format:%C(yellow)%h %Creset%s %C(magenta)%an %C(green)%ar %Creset'
+	lgf = log --follow
+	lgpf = log -p --follow
+	lgpwf = log -p -w --follow
+	lgsf = log --stat --summary --follow
+	lgtf = log --abbrev-commit --decorate --graph --color --pretty='format:%C(yellow)%h %Creset%s %C(magenta)%an %C(green)%ar %Creset' --follow
+	pushall = "!fn(){ for a in `git remote`; do git push $a $(git rev-parse --abbrev-ref HEAD); done; };fn"
+	pullall = "!fn(){ for a in `git remote`; do git pull $a $(git rev-parse --abbrev-ref HEAD); done; };fn"
+	fetchall = "!fn(){ for a in `git remote`; do git fetch $a; done; };fn"
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

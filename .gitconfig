@@ -23,9 +23,11 @@
 	co- = checkout -
 	cob = checkout -b
 	coh = "!f() { git checkout HEAD~$1; }; f"
+	com = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git checkout master; elif git rev-parse --verify main >/dev/null 2>&1; then git checkout main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
 	df = diff
 	dfc = diff --cached
 	dfh = "!f() { git diff HEAD~$1; }; f"
+    dfm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git diff master; elif git rev-parse --verify main >/dev/null 2>&1; then git diff main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
 	dfw = diff -w
 	dfcw = diff --cached -w
 	dfs = diff --stat --summary
@@ -34,13 +36,14 @@
 	mg = merge
 	mga = merge --abort
 	mgc = merge --continue
+    mgm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git merge master; elif git rev-parse --verify main >/dev/null 2>&1; then git merge main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
 	rb = rebase
 	rba = rebase --abort
 	rbc = rebase --continue
 	rbh = "!f() { git rebase HEAD~$1; }; f"
 	rbi = rebase -i
-	rbm = rebase master
 	rbih = "!f() { git rebase -i HEAD~$1; }; f"
+    rbm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git rebase master; elif git rev-parse --verify main >/dev/null 2>&1; then git rebase main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
 	rbo = rebase --onto
 	rmt = remote
 	rmtv = remote -v
@@ -53,6 +56,7 @@
 	rv = revert
 	rvh = "!f() { git revert HEAD~$1; }; f"
 	pl = pull
+	plm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git pull origin master:master; elif git rev-parse --verify main >/dev/null 2>&1; then git pull origin main:main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
 	plr = pull --rebase
 	ps = push
 	psforce = push --force-with-lease
@@ -62,6 +66,7 @@
 	st = status
 	sw = switch
 	swc = switch --create
+	swm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git switch master; elif git rev-parse --verify main >/dev/null 2>&1; then git switch main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
 	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ai%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	lgp = log -p
 	lgpw = log -p -w

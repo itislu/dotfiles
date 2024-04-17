@@ -28,6 +28,7 @@
 	dfc = diff --cached
 	dfh = "!f() { git diff HEAD~$1; }; f"
     dfm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git diff master; elif git rev-parse --verify main >/dev/null 2>&1; then git diff main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
+	dfs = diff --staged
 	dfw = diff -w
 	dfcw = diff --cached -w
 	dfs = diff --stat --summary

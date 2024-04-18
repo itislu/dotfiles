@@ -51,6 +51,9 @@
 	rmtv = remote -v
 	rmta = remote add
 	rmtau = remote add upstream
+	rr = restore
+	rrs = restore --staged
+	rrsw = restore --staged --worktree
 	rs = reset
 	rsh = "!f() { git reset HEAD~$1; }; f"
 	rss = reset --soft

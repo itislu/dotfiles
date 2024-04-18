@@ -18,6 +18,7 @@
 	cl1 = clone --depth 1
 	cm = commit -v
 	cma = commit -v --amend
+	cmane = commit -v --amend --no-edit
 	cmm = "!f() { git commit -m \"$(echo $@)\"; }; f"
 	co = checkout
 	co- = checkout -

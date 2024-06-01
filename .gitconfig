@@ -68,6 +68,7 @@
 	psuh = push -u origin HEAD
 	psforce = push --force-with-lease
 	sh = stash
+	shps = stash push
 	shp = stash pop
 	sm = submodule
 	st = status

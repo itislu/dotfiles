@@ -72,6 +72,7 @@
 	shl = stash list
 	shps = stash push
 	shp = stash pop
+	shs = stash save
 	shu = stash --include-untracked
 	sm = submodule
 	st = status

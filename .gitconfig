@@ -8,9 +8,11 @@
 [alias]
 	aa = add --all
 	ap = add --patch
+	bl = blame
 	br = branch -v
 	bra = branch -v -a
-	bl = blame
+	brm = branch -m
+	brd = branch -d
 	chp = cherry-pick
 	chpa = cherry-pick --abort
 	chpc = cherry-pick --continue

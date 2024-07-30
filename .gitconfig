@@ -65,6 +65,7 @@
 	pl = pull
 	plm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git pull origin master:master; elif git rev-parse --verify main >/dev/null 2>&1; then git pull origin main:main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
 	plr = pull --rebase
+	plsh = pull --autostash
 	ps = push
 	psu = push -u
 	psuh = push -u origin HEAD

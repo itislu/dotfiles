@@ -1,4 +1,4 @@
-alias zshrc='gedit ~/.zshrc'
+alias zshrc='gedit ~/.zshrc &'
 alias zource='source ~/.zshrc'
 
 newalias() {

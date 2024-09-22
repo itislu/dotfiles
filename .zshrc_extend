@@ -1,12 +1,15 @@
 alias zshrc='gedit ~/.zshrc &'
 alias zource='source ~/.zshrc'
 
-newalias() {
-    if [ "$#" -ne 2 ]; then
-        echo "Usage: newalias <alias_name> <command>"
+function newalias() {
+    if [ "$#" -lt 2 ]; then
+        echo "Usage: newalias <alias_name> <command> [args...]"
         return 1
     fi
-    echo "alias $1='$2'" >> ~/.zshrc
-    alias $1="$2"
-    echo "Alias '$1' created for command '$2'"
+    alias_name=$1
+    shift
+    command="$*"
+    echo "alias $alias_name='$command'" >> ~/.zshrc
+    alias $alias_name="$command"
+    echo "Alias '$alias_name' created for command '$command'"
 }

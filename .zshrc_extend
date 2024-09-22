@@ -1,5 +1,6 @@
 alias zshrc='gedit ~/.zshrc &'
 alias zource='source ~/.zshrc'
+alias c='clear'
 
 function newalias() {
     if [ "$#" -lt 2 ]; then

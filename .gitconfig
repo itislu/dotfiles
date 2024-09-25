@@ -2,6 +2,15 @@
 	email = 129603980+itislu@users.noreply.github.com
 	name = Lukas Dullinger
 
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[push]
+	default = current
+
 [color]
 	ui = true
 

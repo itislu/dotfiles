@@ -39,7 +39,7 @@
 	df = diff
 	dfc = diff --cached
 	dfh = "!f() { git diff HEAD~$1; }; f"
-    dfm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git diff master; elif git rev-parse --verify main >/dev/null 2>&1; then git diff main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
+	dfm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git diff master; elif git rev-parse --verify main >/dev/null 2>&1; then git diff main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
 	dfs = diff --staged
 	dfw = diff -w
 	dfcw = diff --cached -w
@@ -49,14 +49,14 @@
 	mg = merge
 	mga = merge --abort
 	mgc = merge --continue
-    mgm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git merge master; elif git rev-parse --verify main >/dev/null 2>&1; then git merge main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
+	mgm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git merge master; elif git rev-parse --verify main >/dev/null 2>&1; then git merge main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
 	rb = rebase
 	rba = rebase --abort
 	rbc = rebase --continue
 	rbh = "!f() { git rebase HEAD~$1; }; f"
 	rbi = rebase -i
 	rbih = "!f() { git rebase -i HEAD~$1; }; f"
-    rbm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git rebase master; elif git rev-parse --verify main >/dev/null 2>&1; then git rebase main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
+	rbm = "!f() { if git rev-parse --verify master >/dev/null 2>&1; then git rebase master; elif git rev-parse --verify main >/dev/null 2>&1; then git rebase main; else echo 'Neither master nor main branch found' && exit 1; fi; }; f"
 	rbo = rebase --onto
 	rmt = remote
 	rmtv = remote -v

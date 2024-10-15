@@ -15,6 +15,7 @@
 	ui = true
 
 [alias]
+	a = add .
 	aa = add --all
 	ap = add --patch
 	bl = blame

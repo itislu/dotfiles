@@ -31,6 +31,7 @@
 	cm = commit -v
 	cma = commit -v --amend
 	cmane = commit -v --amend --no-edit
+	cml = "!f() { local exercise_path=$(echo \"$GIT_PREFIX\" | sed 's/^..\\///' | grep -oE '.*(/|^)ex[0-9]{2}(/|$)'); local module=$(dirname \"$exercise_path\" | xargs basename | sed 's/^\\.$//'); local exercise=$(basename \"$exercise_path\"); if [ -z \"$module\" ] && [ -z \"$exercise\" ]; then module=$(basename \"$GIT_PREFIX\"); fi; local module_num=$(echo \"$module\" | grep -oE '[0-9]+'); local exercise_num=$(echo \"$exercise\" | grep -oE '[0-9]{2}'); local type=$1; shift; local message=\"$@\"; local scope=\"\"; if [ -n \"$module_num\" ] && [ -n \"$exercise_num\" ]; then scope=\"[$module_num/$exercise_num] \"; elif [ -n \"$module\" ]; then scope=\"[$module] \"; elif [ -n \"$exercise\" ]; then scope=\"[$exercise] \"; fi; git commit -m \"$scope$type: $message\"; }; f"
 	cmm = "!f() { git commit -m \"$(echo $@)\"; }; f"
 	co = checkout
 	co- = checkout -

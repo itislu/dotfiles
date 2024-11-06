@@ -14,3 +14,12 @@ function newalias() {
     alias $alias_name="$command"
     echo "Alias '$alias_name' created for command '$command'"
 }
+
+function cdm() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: cdm <directory>"
+        return 1
+    fi
+    mkdir -p "$1" && cd "$1"
+}
+
